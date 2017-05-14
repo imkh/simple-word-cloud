@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CECS 406 Individual Project</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+</head>
+<body>
+  <!-- Always shows a header, even in smaller screens. -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">CECS 406 Individual Project: Word Cloud</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Word Cloud</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+
+        <!-- Form controls -->
+        <div id="input">
+          <section class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col">
+              <label for="min-font-size">Min font size</label>
+              <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="12" tabindex="0" step="1" name="min-font-size" id="min-font-size">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <label for="max-font-size">Max font size</label>
+              <input class="mdl-slider mdl-js-slider" type="range" min="100" max="200" value="150" tabindex="0" step="1" name="max-font-size" id="max-font-size">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              Color: <input class="jscolor" value="3F51B5" id="color-picker">
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--7-col">
+                  <label for="opacity-switch"><span class="mdl-switch__label">Use opacity</span></label>
+                </div>
+                <div class="mdl-cell mdl-cell--5-col">
+                  <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="opacity-switch">
+                    <input type="checkbox" id="opacity-switch" class="mdl-switch__input" checked />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--7-col">
+                  <label for="text-overlap"><span class="mdl-switch__label">Text overlap</span></label>
+                </div>
+                <div class="mdl-cell mdl-cell--5-col">
+                  <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="text-overlap">
+                    <input type="checkbox" id="text-overlap" class="mdl-switch__input" checked />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--7-col">
+                  <label for="ignore-common-terms"><span class="mdl-switch__label">Ignore common terms</span></label>
+                </div>
+                <div class="mdl-cell mdl-cell--5-col">
+                  <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ignore-common-terms">
+                    <input type="checkbox" id="ignore-common-terms" class="mdl-switch__input" checked />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" pattern="^[0-9]+$" id="words-lorem-ipsum" value="300">
+                  <label class="mdl-textfield__label" for="words-lorem-ipsum"># of words (Lorem Ipsum)</label>
+                  <span class="mdl-textfield__error">Input is not a number</span>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                  <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="filter-checkbox">
+                    <input type="checkbox" id="filter-checkbox" class="mdl-checkbox__input">
+                    <span class="mdl-checkbox__label">Filter words</span>
+                  </label>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="^[0-9]+$" id="frequency-percentage" value="1">
+                      <label class="mdl-textfield__label" for="frequency-percentage">Less than or equal...</label>
+                      <span class="mdl-textfield__error">Input is not a number</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </section>
+
+          <!-- Textarea -->
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 50%;" id="mdl-textarea">
+            <textarea class="mdl-textfield__input" type="text" rows="10" id="textarea"></textarea>
+            <label class="mdl-textfield__label" for="schools">Enter your text here</label>
+            <span class="mdl-textfield__error">Text area is empty</span>
+          </div>
+
+          <br />
+
+          <!-- Submit Button -->
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="generateWordCloud()">Enter</button>
+          <!-- Flat button with ripple -->
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="generateLoremIpsum()">
+            Generate Lorem Ipsum
+          </button>
+        </div>
+
+        <br />
+
+        <!-- Visualization -->
+        <div id="content-area">
+          <!-- Loading spinner -->
+          <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner" id="mdl-spinner"></div>
+
+          <!-- Results chips -->
+          <section id="section-chips" style="display: none;">
+            <span class="mdl-chip chip">
+              <span class="mdl-chip__text" id="num-words"></span>
+            </span>
+            <span class="mdl-chip chip">
+              <span class="mdl-chip__text" id="min-frequency"></span>
+            </span>
+            <span class="mdl-chip chip">
+              <span class="mdl-chip__text" id="max-frequency"></span>
+            </span>
+          </section>
+
+          <br />
+
+          <!-- Word Cloud visualization -->
+          <div id="word-cloud" style="color: #000000">
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Script -->
+<!--   <script src="worker.js"></script> -->
+  <script src="stop-words.js"></script>
+  <script src="script.js"></script>
+  <script src="jscolor.min.js"></script>
+  <script src="lorem-ipsum.js"></script>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+</html>

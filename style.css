@@ -1,0 +1,65 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+#card {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 98%;
+  min-height: 0 !important;
+}
+
+#input {
+  margin-top: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chip {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+label {
+    /* Other styling.. */
+    text-align: right;
+    clear: both;
+    float:left;
+}
+
+.label {
+  display: block;
+  position: absolute;
+  top: -55px;
+  width: 25px;
+  height: 25px;
+  border-radius: 0 50% 50% 50%;
+  background-color: rgb(63, 81, 181);
+  transform: rotate(-135deg);
+  margin-top: 20px;
+}
+
+.label div {
+  line-height: 25px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  transform: rotate(135deg);
+}
+
+.label.zeroed {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#word-cloud {
+  overflow: hidden;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}

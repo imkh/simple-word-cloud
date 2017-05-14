@@ -13,6 +13,7 @@ Simply clone the project and open `index.html` in your browser. Copy a text in t
 
 * You can change the minimum font size, the maximum font size, and the color if the default values are not to your liking.
 * You can enable or disable the use of opacity.
+* You can hover any word to see its exact frequency in the text.
 * The text overlap option isn't actually functional: it was meant to give the user the choice to enable or disable it after the text started overlapping for some reason. Ultimately, I decided to consider it as a feature and not a bug. It kind of gives the result a nice styling.
 * The ignore common terms option allows the text to be compared to a list of English stop words in order to ignore words such as *the*, *to* or *from* which don't convey any particular meaning.
 * You can customize the number of words you want for the lorem ipsum generator.
